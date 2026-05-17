@@ -15,9 +15,20 @@
 }
 
 @media (max-width: 600px) {
+  .app-container {
+    padding: 1rem;
+  }
   .inputs-container {
     flex-direction: column;
     gap: 1.5rem;
+  }
+  .input-section {
+    padding: 1rem;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  .score-box .score-val {
+    font-size: 1.5rem;
   }
 }
 

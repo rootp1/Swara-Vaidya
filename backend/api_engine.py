@@ -11,7 +11,13 @@ import warnings
 
 warnings.filterwarnings('ignore')
 
-def evaluate_chant(user_audio_path, whisper_model, reference_features_path="reference_features.json", ref_audio_path="chant1.wav"):
+import os
+
+def evaluate_chant(user_audio_path, whisper_model, reference_features_path=None, ref_audio_path=None):
+    if reference_features_path is None:
+        reference_features_path = os.path.join(os.path.dirname(__file__), "reference_features.json")
+    if ref_audio_path is None:
+        ref_audio_path = os.path.join(os.path.dirname(__file__), "chant1.wav")
     with open(reference_features_path, "r") as f:
         reference = json.load(f)
 

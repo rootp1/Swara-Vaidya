@@ -16,7 +16,7 @@ ENV PATH="/home/user/.local/bin:${PATH}"
 
 COPY --chown=user:user . .
 
-RUN pip install --no-cache-dir --upgrade pip && \
+RUN pip install --no-cache-dir --upgrade pip setuptools wheel && \
     pip install --no-cache-dir -r backend/requirements.txt
 
 WORKDIR /app/frontend
